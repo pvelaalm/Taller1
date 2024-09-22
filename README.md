@@ -1,3 +1,7 @@
+## Repositorio
+
+Puedes encontrar el proyecto completo en mi repositorio de GitHub: [Taller1](https://github.com/pvelaalm/Taller1)
+
 # Documentación del Proyecto: Aplicación Android
 
 ## 1. Introducción
