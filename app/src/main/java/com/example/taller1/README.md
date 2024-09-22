@@ -31,3 +31,132 @@ private void setGreetingMessage() {
         greetingTextView.setText("Buenas noches");
     }
 }
+
+Este método utiliza la clase Calendar para obtener la hora actual y establecer un mensaje de saludo en función de si es mañana, tarde o noche.
+Diseño XML
+
+xml
+
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center">
+    
+    <TextView
+        android:id="@+id/greetingTextView"
+        android:text="¡Bienvenido!"
+        android:textSize="24sp" />
+    
+    <Button
+        android:id="@+id/buttonGoToMain"
+        android:text="Ir a la actividad principal" />
+</LinearLayout>
+
+Este diseño XML organiza los elementos de la interfaz de manera simple y vertical, con un TextView para el saludo y un botón para navegar a la siguiente actividad.
+4. ActivityPrincipal
+Descripción
+
+ActivityPrincipal es la actividad donde el usuario puede ingresar su nombre y verlo reflejado en la pantalla. También permite navegar a la ActivityConfiguracion para cambiar el color de fondo de la aplicación.
+Código Clave
+
+java
+
+buttonGuardarNombre.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        String nombre = editTextNombre.getText().toString();
+        textViewNombre.setText("Nombre ingresado: " + nombre);
+    }
+});
+
+Este fragmento de código obtiene el texto ingresado por el usuario y lo muestra en el TextView correspondiente.
+Diseño XML
+
+xml
+
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center">
+    
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:hint="Ingresa tu nombre" />
+    
+    <Button
+        android:id="@+id/buttonGuardarNombre"
+        android:text="Guardar Nombre" />
+    
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:textSize="18sp" />
+    
+    <Button
+        android:id="@+id/buttonGoToConfiguracion"
+        android:text="Ir a Configuración" />
+</LinearLayout>
+
+En esta interfaz, se utiliza un EditText para la entrada del nombre, seguido de un botón para guardarlo y un TextView para mostrar el nombre ingresado.
+5. ActivityConfiguracion
+Descripción
+
+ActivityConfiguracion es la pantalla que permite al usuario cambiar el color de fondo de la aplicación. El usuario puede elegir entre los colores rojo, verde y azul, y también volver a la pantalla principal.
+Código Clave
+
+java
+
+buttonColorRojo.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        layoutConfiguracion.setBackgroundColor(Color.RED);
+    }
+});
+
+Este fragmento de código cambia el color de fondo del LinearLayout cuando el usuario presiona el botón correspondiente.
+Diseño XML
+
+xml
+
+<LinearLayout
+    android:id="@+id/layoutConfiguracion"
+    android:orientation="vertical"
+    android:gravity="center">
+    
+    <TextView
+        android:text="Elige un color de fondo:" 
+        android:textSize="24sp"/>
+    
+    <Button
+        android:id="@+id/buttonColorRojo"
+        android:text="Rojo" />
+    
+    <Button
+        android:id="@+id/buttonColorVerde"
+        android:text="Verde" />
+    
+    <Button
+        android:id="@+id/buttonColorAzul"
+        android:text="Azul" />
+    
+    <Button
+        android:id="@+id/buttonVolver"
+        android:text="Volver a la pantalla de inicio" />
+</LinearLayout>
+
+La disposición vertical organiza los botones para seleccionar un color de fondo, y hay un botón adicional para volver a la actividad anterior.
+6. Interacciones entre las actividades
+
+La aplicación utiliza la clase Intent para navegar entre actividades. Por ejemplo, desde MainActivity, se inicia ActivityPrincipal, y desde allí, el usuario puede navegar a ActivityConfiguracion.
+
+java
+
+Intent intent = new Intent(MainActivity.this, ActivityPrincipal.class);
+startActivity(intent);
+
+Este código es clave para la navegación en Android, donde se indica la actividad de origen y la actividad de destino.
+7. Conclusión
+
+Esta aplicación Android básica ofrece una experiencia personalizada al usuario mediante un saludo dinámico, la posibilidad de ingresar su nombre y cambiar el color de fondo. El código es modular y organizado, con tres actividades principales que interactúan entre sí de manera eficiente.
+8. Bibliografía
+
+    Documentación oficial de Android: https://developer.android.com
+    Guía de diseño de interfaces de usuario en Android
+    Referencia de Java para Android
