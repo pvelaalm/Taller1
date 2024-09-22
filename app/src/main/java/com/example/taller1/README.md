@@ -52,14 +52,15 @@ xml
 </LinearLayout>
 
 Este diseño XML organiza los elementos de la interfaz de manera simple y vertical, con un TextView para el saludo y un botón para navegar a la siguiente actividad.
-4. ActivityPrincipal
-Descripción
 
-ActivityPrincipal es la actividad donde el usuario puede ingresar su nombre y verlo reflejado en la pantalla. También permite navegar a la ActivityConfiguracion para cambiar el color de fondo de la aplicación.
-Código Clave
+## 4. ActivityPrincipal
 
-java
+### Descripción
+`ActivityPrincipal` es la actividad donde el usuario puede ingresar su nombre y verlo reflejado en la pantalla. También permite navegar a la `ActivityConfiguracion` para cambiar el color de fondo de la aplicación.
 
+### Código Clave
+
+```java
 buttonGuardarNombre.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -67,6 +68,7 @@ buttonGuardarNombre.setOnClickListener(new View.OnClickListener() {
         textViewNombre.setText("Nombre ingresado: " + nombre);
     }
 });
+
 
 Este fragmento de código obtiene el texto ingresado por el usuario y lo muestra en el TextView correspondiente.
 Diseño XML
@@ -95,14 +97,14 @@ xml
 </LinearLayout>
 
 En esta interfaz, se utiliza un EditText para la entrada del nombre, seguido de un botón para guardarlo y un TextView para mostrar el nombre ingresado.
-5. ActivityConfiguracion
-Descripción
+## 5. ActivityConfiguracion
 
-ActivityConfiguracion es la pantalla que permite al usuario cambiar el color de fondo de la aplicación. El usuario puede elegir entre los colores rojo, verde y azul, y también volver a la pantalla principal.
-Código Clave
+### Descripción
+`ActivityConfiguracion` es la pantalla que permite al usuario cambiar el color de fondo de la aplicación. El usuario puede elegir entre los colores rojo, verde y azul, y también volver a la pantalla principal.
 
-java
+### Código Clave
 
+```java
 buttonColorRojo.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -110,7 +112,6 @@ buttonColorRojo.setOnClickListener(new View.OnClickListener() {
     }
 });
 
-Este fragmento de código cambia el color de fondo del LinearLayout cuando el usuario presiona el botón correspondiente.
 Diseño XML
 
 xml
@@ -142,21 +143,21 @@ xml
 </LinearLayout>
 
 La disposición vertical organiza los botones para seleccionar un color de fondo, y hay un botón adicional para volver a la actividad anterior.
-6. Interacciones entre las actividades
+## 6. Interacciones entre las actividades
 
-La aplicación utiliza la clase Intent para navegar entre actividades. Por ejemplo, desde MainActivity, se inicia ActivityPrincipal, y desde allí, el usuario puede navegar a ActivityConfiguracion.
+La aplicación utiliza la clase `Intent` para navegar entre actividades. Por ejemplo, desde `MainActivity`, se inicia `ActivityPrincipal`, y desde allí, el usuario puede navegar a `ActivityConfiguracion`.
 
-java
+### Código Clave
 
+```java
 Intent intent = new Intent(MainActivity.this, ActivityPrincipal.class);
 startActivity(intent);
-
-Este código es clave para la navegación en Android, donde se indica la actividad de origen y la actividad de destino.
-7. Conclusión
+## 7. Conclusión
 
 Esta aplicación Android básica ofrece una experiencia personalizada al usuario mediante un saludo dinámico, la posibilidad de ingresar su nombre y cambiar el color de fondo. El código es modular y organizado, con tres actividades principales que interactúan entre sí de manera eficiente.
-8. Bibliografía
 
-    Documentación oficial de Android: https://developer.android.com
-    Guía de diseño de interfaces de usuario en Android
-    Referencia de Java para Android
+## 8. Bibliografía
+
+- Documentación oficial de Android: [https://developer.android.com](https://developer.android.com)
+- Guía de diseño de interfaces de usuario en Android
+- Referencia de Java para Android
