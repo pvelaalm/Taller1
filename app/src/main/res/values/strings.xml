@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Taller1</string>
+    <string name="greeting_morning">Buenos días</string>
+    <string name="greeting_afternoon">Buenas tardes</string>
+    <string name="greeting_evening">Buenas noches</string>
+    <string name="button_go_to_main">Ir a la actividad principal</string>
 </resources>

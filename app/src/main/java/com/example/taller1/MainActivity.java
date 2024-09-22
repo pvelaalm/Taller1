@@ -1,9 +1,7 @@
 package com.example.taller1;
-
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,35 +11,40 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView greetingTextView;
+    private Button buttonGoToMain;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView greetingText = findViewById(R.id.greetingText);
-        Button goToMainButton = findViewById(R.id.goToMainButton);
+        greetingTextView = findViewById(R.id.greetingTextView);
+        buttonGoToMain = findViewById(R.id.buttonGoToMain);
 
-        // Cambiar saludo según la hora
-        greetingText.setText(getGreetingMessage());
+        // Cambiar el saludo según la hora del día
+        setGreetingMessage();
 
-        // Ir a la actividad principal
-        goToMainButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, PrincipalActivity.class);
-            startActivity(intent);
+        // Botón para navegar a la Actividad Principal
+        buttonGoToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityPrincipal.class);
+                startActivity(intent);
+            }
         });
     }
 
-    // Método para generar el saludo según la hora
-    private String getGreetingMessage() {
+    private void setGreetingMessage() {
         Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
 
-        if (hour >= 6 && hour < 12) {
-            return "Buenos días";
-        } else if (hour >= 12 && hour < 18) {
-            return "Buenas tardes";
+        if (hourOfDay >= 6 && hourOfDay < 12) {
+            greetingTextView.setText("Buenos días");
+        } else if (hourOfDay >= 12 && hourOfDay < 18) {
+            greetingTextView.setText("Buenas tardes");
         } else {
-            return "Buenas noches";
+            greetingTextView.setText("Buenas noches");
         }
     }
 }

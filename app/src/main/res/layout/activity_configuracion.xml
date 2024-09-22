@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutConfiguracion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige un color de fondo:"
+        android:textSize="24sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/buttonColorRojo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rojo" />
+
+    <Button
+        android:id="@+id/buttonColorVerde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verde" />
+
+    <Button
+        android:id="@+id/buttonColorAzul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Azul" />
+
+    <Button
+        android:id="@+id/buttonVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver a la pantalla de inicio" />
+</LinearLayout>
